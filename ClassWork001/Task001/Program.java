@@ -1,4 +1,4 @@
-package ClassWork001;
+package ClassWork001.Task001;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +25,14 @@ public class Program {
         // System.out.println(hero3.getInfo());
         // System.out.println(hero4.getInfo());
 
-        System.out.println("------------------");
+        System.out.println("---------Attack---------");
 
         hero3.Attack(hero4);
         hero4.Attack(hero3);
         System.out.println(hero3.getInfo());
         System.out.println(hero4.getInfo());
 
-        System.out.println("------------------");
+        System.out.println("----------heal--------");
         hero5.heal(hero4);
         System.out.println(hero4.getInfo());
 
