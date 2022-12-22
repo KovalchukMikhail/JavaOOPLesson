@@ -29,10 +29,12 @@ public class Controller {
                         view.showMenuSelectionId();
                         Integer id = model.inputInt(scanner);
                         person = model.getPersonById(id, persons);
-                        if(!person.equals(null)) checkInput = true;
+                        if(person != null || id.equals(0)) checkInput = true;
                         else view.showError();
                     }
+                    if (person == null) continue;
                 }
+                
                 String text = "";
                 switch (menuItem) {
                     case all:

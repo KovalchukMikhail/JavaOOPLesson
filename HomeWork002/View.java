@@ -18,7 +18,7 @@ public class View {
     }
 
     public void showMenuSelectionId(){
-        System.out.println("Для поиска родственников человек, введите его Id: ");
+        System.out.println("Для поиска родственников человек, введите его Id или 0 для возврата в главное меню: ");
     }
 
     public void showError(){
