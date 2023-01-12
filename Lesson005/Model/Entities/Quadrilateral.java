@@ -7,8 +7,8 @@ public class Quadrilateral implements Entity{
     private Double lenthY;
 
     public Quadrilateral(Double lenthX, Double lenthY) {
-        setLenthX(lenthX);
-        setLenthY(lenthY);
+        this.lenthX = lenthX;
+        this.lenthY = lenthY;
     }
 
     public void setLenthX(Double lenthX) {

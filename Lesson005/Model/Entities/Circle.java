@@ -4,7 +4,7 @@ public class Circle implements Entity{
     private Double radius;
 
     public Circle(Double radius) {
-        setRadius(radius);
+        this.radius = radius;
     }
 
     public void setRadius(Double value){
