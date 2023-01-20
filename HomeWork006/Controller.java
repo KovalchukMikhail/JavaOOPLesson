@@ -13,12 +13,16 @@ public class Controller {
     }
 
     public void start(){
-        Integer size = getInt("Введите размер массива");
+        Integer size = getInt("Введите размер массива", 0);
         if(size == null) return;
         Integer min = getInt("Введите минимальное возможное значение чисел в массиве");
         if(min == null) return;
         Integer max = getInt("Введите максимальное возможное значение чисел в массиве");
         if(max == null) return;
+        else if (max <= min){
+            view.showError();
+            return;
+        }
 
         int[] array = model.сreatArray(min, max, size);
         view.showText("Исходный массив");
@@ -34,8 +38,32 @@ public class Controller {
         boolean check = true;
         while(check){
             view.showText(text);
-            answer = view.inputInt();
+            answer = view.inputInteger();
             if(answer == null) check = askExit();
+            else return answer;
+        }
+        return answer;
+    }
+
+    private Integer getInt(String text, int min){
+        Integer answer = null;
+        boolean check = true;
+        while(check){
+            view.showText(text);
+            answer = view.inputInteger();
+            if(answer == null || answer < min) check = askExit();
+            else return answer;
+        }
+        return answer;
+    }
+
+    private Integer getInt(String text, int min, int max){
+        Integer answer = null;
+        boolean check = true;
+        while(check){
+            view.showText(text);
+            answer = view.inputInteger();
+            if(answer == null || answer < min || answer > max) check = askExit();
             else return answer;
         }
         return answer;
@@ -45,9 +73,9 @@ public class Controller {
         int answer;
         while(true){
             view.showExitMenu();
-            answer = view.inputInt();
-            if(answer == 1) return false;
-            else if (answer == 0) return true;
+            answer = view.inputInteger();
+            if(answer == 0) return false;
+            else if (answer == 1) return true;
         }
     }
 }

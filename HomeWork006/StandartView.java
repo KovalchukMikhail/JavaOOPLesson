@@ -35,7 +35,7 @@ public class StandartView implements View{
     }
 
     @Override
-    public int inputInt() {
+    public Integer inputInteger() {
         Integer num;
         try
         {

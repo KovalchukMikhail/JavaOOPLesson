@@ -7,7 +7,7 @@ public interface View {
 
     void showError();
 
-    int inputInt();
+    Integer inputInteger();
 
     void showExitMenu();
 }
